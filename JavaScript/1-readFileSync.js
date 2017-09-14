@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const buffer = fs.readFileSync('1-readFile.js');
+const buffer = fs.readFileSync('1-readFileSync.js');
 const src = buffer.toString();
 
 console.log('Buffer length: ' + buffer.length);
