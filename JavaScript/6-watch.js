@@ -2,10 +2,6 @@
 
 const fs = require('fs');
 
-const watch = (path) => {
-  fs.watch(path, (event, file) => {
-    console.dir({ event, file });
-  });
-};
-
-watch('./');
+fs.watch('./6-watch.js', (event, file) => {
+  console.dir({ event, file });
+});
