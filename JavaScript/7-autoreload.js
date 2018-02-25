@@ -24,3 +24,5 @@ const watch = (path) => {
 const path = './1-readFileSync.js';
 load(path);
 watch(path);
+
+// See: https://github.com/HowProgrammingWorks/FilesystemWatch
