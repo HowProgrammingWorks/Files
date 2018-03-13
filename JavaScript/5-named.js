@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const files = ['1-readFileSync.js', 'n-untitled.js', '3-readFile.js'];
+const files = ['1-readFileSync.js', 'n-untitled.js', '3-async.js'];
 const count = files.length - 1;
 const stats = new Array(files.length);
 
