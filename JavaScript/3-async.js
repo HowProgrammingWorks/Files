@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-fs.readFile('1-readFileSync.js', (err, buffer) => {
+fs.readFile('1-readFileSync.js', 'utf8', (err, buffer) => {
   if (err) console.log(err);
   console.log('File size: ' + buffer.length);
   const src = buffer.toString();

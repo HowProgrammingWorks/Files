@@ -5,7 +5,7 @@ const fs = require('fs');
 let buffer;
 
 const load = (path) => {
-  fs.readFile(path, (err, data) => {
+  fs.readFile(path, 'utf8', (err, data) => {
     if (err) throw err;
     buffer = data;
     console.log('\x1Bc');
