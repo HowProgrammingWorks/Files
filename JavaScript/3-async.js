@@ -8,7 +8,7 @@ fs.readFile('1-readFileSync.js', 'utf8', (err, buffer) => {
   const src = buffer.toString();
   const lines = src.split('\n').filter(line => !!line);
   const content = lines.join('\n');
-  fs.writeFile('1-readFileSync.txt', content, (err) => {
+  fs.writeFile('1-readFileSync.txt', content, err => {
     if (err) console.log(err);
     console.log('New file size: ' + content.length);
   });

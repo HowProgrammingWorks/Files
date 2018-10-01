@@ -4,7 +4,7 @@ const fs = require('fs');
 
 let buffer;
 
-const load = (path) => {
+const load = path => {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) throw err;
     buffer = data;
@@ -14,7 +14,7 @@ const load = (path) => {
   });
 };
 
-const watch = (path) => {
+const watch = path => {
   fs.watch(path, (event, file) => {
     console.dir({ event, file });
     load(path);
