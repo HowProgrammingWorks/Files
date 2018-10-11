@@ -23,4 +23,3 @@ files.forEach((file, i) => {
     if (i === maxIndex) printResult();
   });
 });
-

@@ -2,21 +2,17 @@
 
 const fs = require('fs');
 
-let buffer;
-
 const load = path => {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) throw err;
-    buffer = data;
     console.log('\x1Bc');
-    console.log('Buffer length: ' + buffer.length);
-    console.log(buffer.toString());
+    console.log(`Data length: ${data.length}`);
+    console.log(data);
   });
 };
 
 const watch = path => {
-  fs.watch(path, (event, file) => {
-    console.dir({ event, file });
+  fs.watch(path, () => {
     load(path);
   });
 };

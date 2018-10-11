@@ -2,15 +2,14 @@
 
 const fs = require('fs');
 
-fs.readFile('1-readFileSync.js', 'utf8', (err, buffer) => {
-  if (err) console.log(err);
-  console.log('File size: ' + buffer.length);
-  const src = buffer.toString();
-  const lines = src.split('\n').filter(line => !!line);
+fs.readFile('1-readFileSync.js', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(`File size: ${data.length}`);
+  const lines = data.split('\n').filter(line => !!line);
   const content = lines.join('\n');
   fs.writeFile('1-readFileSync.txt', content, err => {
-    if (err) console.log(err);
-    console.log('New file size: ' + content.length);
+    if (err) throw err;
+    console.log(`New file size: ${content.length}`);
   });
 });
 
