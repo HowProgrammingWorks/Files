@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const load = path => {
+const load = (path) => {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) throw err;
     console.log('\x1Bc');
@@ -11,7 +11,7 @@ const load = path => {
   });
 };
 
-const watch = path => {
+const watch = (path) => {
   fs.watch(path, () => {
     load(path);
   });
