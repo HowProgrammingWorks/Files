@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('node:fs');
 
 const main = async () => {
   const stream = fs.createReadStream('./8-promises.js', 'utf8');

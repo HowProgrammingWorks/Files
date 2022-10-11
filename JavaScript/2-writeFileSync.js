@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('node:fs');
 
 const data = fs.readFileSync('1-readFileSync.js', 'utf8');
 const lines = data.split('\n').filter((line) => !!line);

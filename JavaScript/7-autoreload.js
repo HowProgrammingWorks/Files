@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('node:fs');
 
 const load = (path) => {
   fs.readFile(path, 'utf8', (err, data) => {

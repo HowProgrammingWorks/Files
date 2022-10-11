@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('node:fs');
 
 const files = ['1-readFileSync.js', 'n-untitled.js', '3-async.js'];
 const count = files.length - 1;
