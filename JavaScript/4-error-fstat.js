@@ -2,25 +2,24 @@
 
 const fs = require('node:fs');
 
-const files = ['1-readFileSync.js', 'n-untitled.js', '3-async.js'];
+const filenames = ['1-readFileSync.js', 'n-untitled.js', '3-async.js'];
+const stats = new Array(filenames.length);
 
-const stats = new Array(files.length);
-
-let rest = files.length;
-
-const printResult = () => {
-  console.dir({ stats });
-};
-
-files.forEach((file, i) => {
-  console.dir({ file, i });
-  fs.lstat(file, (err, stat) => {
+let processedCount = 0;
+for (const [index, filename] of filenames.entries()) {
+  console.dir({ filename, index });
+  fs.lstat(filename, (err, stat) => {
     if (err) {
-      console.log(`File ${file} not found`);
+      console.log(`File ${filename} not found`);
     } else {
-      stats[i] = stat;
+      stats[index] = stat;
     }
-    if (--rest) return;
-    printResult();
+
+    processedCount += 1;
+
+    const isLastProcessed = processedCount === filenames.length;
+    if (isLastProcessed) {
+      console.dir({ stats });
+    }
   });
-});
+}
