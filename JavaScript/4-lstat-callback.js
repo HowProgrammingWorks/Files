@@ -5,7 +5,6 @@ const fs = require('node:fs');
 const stats = (files, done) => {
   const result = {};
   for (const file of files) {
-    const res = {};
     fs.lstat(file, (err, stat) => {
       result[file] = { err, stat };
       const count = Object.keys(result).length;
